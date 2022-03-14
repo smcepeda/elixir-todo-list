@@ -29,7 +29,9 @@ defmodule ElixirTodoWeb.Api.Schema do
     field :toggle_todo_item, :todo_item do
       arg(:id, non_null(:id))
 
-      resolve(fn %{id: item_id}, _ -> end)
+      resolve(fn %{id: item_id}, _ ->
+        Todos.toggle_item_by_id(item_id)
+      end)
     end
   end
 
