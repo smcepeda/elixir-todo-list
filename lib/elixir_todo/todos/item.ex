@@ -13,6 +13,6 @@ defmodule ElixirTodo.Todos.Item do
   def changeset(item, attrs) do
     item
     |> cast(attrs, [:content, :completed_at])
-    |> validate_required([:content, :completed_at])
+    |> validate_required([:content])
   end
 end

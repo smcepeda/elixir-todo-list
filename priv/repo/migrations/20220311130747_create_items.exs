@@ -3,7 +3,7 @@ defmodule ElixirTodo.Repo.Migrations.CreateItems do
 
   def change do
     create table(:items) do
-      add :content, :string
+      add :content, :string, null: false
       add :completed_at, :utc_datetime
 
       timestamps()
